@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>摸鱼科技 2026 年第 45 周工作报告</title>
+<style>
+@page {
+  size: A4;
+  margin: 20mm 18mm 18mm 18mm;
+  @top-left    { content: "摸鱼科技股份有限公司 · 2026 年第 45 周工作报告";
+                 font-family:"SimHei","Microsoft YaHei",sans-serif; font-size:7.4pt; color:#12345a; }
+  @top-right   { content: "证券代码：002520";
+                 font-family:"SimHei","Microsoft YaHei",sans-serif; font-size:7.4pt; color:#7a8798; }
+  @bottom-left { content: "示意性测算，未经审计 · 文体性戏仿";
+                 font-family:"SimSun",serif; font-size:7.2pt; color:#8b98a8; }
+  @bottom-right{ content: "第 " counter(page) " 页 / 共 " counter(pages) " 页";
+                 font-family:"SimHei","Microsoft YaHei",sans-serif; font-size:7.4pt; color:#12345a; }
+}
+@page :first {
+  margin: 0;
+  @top-left { content: none; } @top-right { content: none; }
+  @bottom-left { content: none; } @bottom-right { content: none; }
+}
+* { box-sizing: border-box; }
+body { margin:0; padding:0; color:#1c2430; font-size:10pt; line-height:1.75;
+       font-family:"SimSun","Songti SC","Noto Serif CJK SC",serif; }
+h1,h2,h3,.sans,.cover { font-family:"SimHei","Microsoft YaHei","Noto Sans CJK SC",sans-serif; }
+p { margin:0 0 2.3mm; text-align:justify; orphans:2; widows:2; }
+strong { font-weight:bold; color:#12345a; }
+em { font-style:italic; }
+
+/* ---------------- 封面 ---------------- */
+.cover { page-break-after:always; height:297mm; width:210mm; position:relative;
+         padding:16mm 20mm 12mm; overflow:hidden;
+         display:flex; flex-direction:column; }
+.cover-band { height:5mm; background:linear-gradient(90deg,#12345a 0%,#12345a 72%,#b02424 72%); }
+.cover-head { display:flex; justify-content:space-between; align-items:flex-start;
+              margin-top:9mm; padding-bottom:5mm; border-bottom:1.1pt solid #12345a; }
+.cover-head img { height:15mm; width:auto; }
+.cover-code { text-align:right; font-size:9pt; line-height:1.9; color:#12345a; }
+.cover-code b { color:#b02424; }
+.cover-main { text-align:center; margin-top:15mm; }
+.cover-company { font-size:21pt; font-weight:bold; color:#12345a; letter-spacing:2.5mm; }
+.cover-en { font-size:8.6pt; letter-spacing:1.2mm; color:#7a8798; margin-top:2mm; }
+.cover-rule { width:34mm; height:1.4mm; background:#b02424; margin:7mm auto; }
+.cover-title { font-size:27pt; font-weight:bold; color:#12345a; margin:0; line-height:1.35; }
+.cover-week { font-size:11pt; color:#b02424; margin-top:3mm; }
+.cover-kind { font-size:9pt; color:#7a8798; margin-top:4mm; }
+.cover-subtitle { max-width:148mm; margin:8mm auto 0; padding:3mm 6mm; font-size:9.2pt;
+                  line-height:1.75; color:#33445c; border-top:0.5pt solid #c9d6e5;
+                  border-bottom:0.5pt solid #c9d6e5; text-align:center; }
+.cover-period { margin-top:5mm; font-size:10pt; color:#12345a; }
+.kpi-strip { display:flex; gap:3mm; margin-top:8mm; }
+.kpi-card { flex:1; border:0.5pt solid #c9d6e5; border-top:2pt solid #12345a;
+            background:#f7f9fc; padding:3.5mm 1.5mm; text-align:center; }
+.kpi-card .l { font-size:8pt; color:#66788c; }
+.kpi-card .v { font-size:15pt; font-weight:bold; color:#12345a; line-height:1.5; }
+.kpi-card .c { font-size:8pt; color:#b02424; }
+.notice { margin-top:6mm; border:0.6pt solid #b02424; border-left:2.6pt solid #b02424;
+          background:#fdf7f7; padding:2.8mm 4mm; font-size:8.2pt; line-height:1.6; }
+.notice .t { color:#b02424; font-weight:bold; margin-right:3mm; }
+.cover-foot { margin-top:auto;
+              display:flex; justify-content:space-between; align-items:flex-end;
+              border-top:1.1pt solid #12345a; padding-top:3mm;
+              font-size:8.4pt; line-height:1.75; color:#33445c; }
+.cover-foot img { height:20mm; width:auto; }
+
+/* ---------------- 目录 / 释义 / 摘要（前置页） ---------------- */
+.front { padding-top:0; }
+.fm-title { font-size:16pt; font-weight:bold; color:#12345a; margin:0 0 3mm;
+            padding-bottom:2mm; border-bottom:1.4pt solid #12345a; }
+.fm-sub { font-size:8pt; color:#8b98a8; letter-spacing:0.5mm; margin-bottom:4mm; }
+.toc-row { display:flex; align-items:baseline; font-size:9.6pt; margin-bottom:1.8mm; }
+.toc-row .n { color:#b02424; font-weight:bold; flex:0 0 21mm; white-space:nowrap; }
+.toc-row .t { color:#1c2430; white-space:nowrap; flex:0 0 auto; }
+.toc-row .d { flex:1; border-bottom:1px dotted #9aa8b8; margin:0 2mm; position:relative; top:-1mm; }
+.toc-row .e { font-size:8pt; color:#8b98a8; white-space:nowrap; }
+.glossary { width:100%; border-collapse:collapse; font-size:8.6pt; margin:1.5mm 0 3mm; }
+.glossary th { background:#12345a; color:#fff; text-align:left; padding:1.2mm 2.5mm; font-size:8.8pt; }
+.glossary td { border:0.4pt solid #d6dfe9; padding:0.9mm 2.5mm; vertical-align:top; }
+.glossary tr:nth-child(even) td { background:#f4f7fb; }
+.glossary td:first-child { font-weight:bold; color:#12345a; width:30%; }
+.exec { border:0.6pt solid #12345a; border-left:2.8pt solid #12345a;
+        background:#f7f9fc; padding:2.5mm 4mm; margin:2.5mm 0 2mm; font-size:9pt;
+        line-height:1.7; break-inside:avoid; page-break-inside:avoid; }
+.exec .h { font-size:10.5pt; font-weight:bold; color:#12345a; margin-bottom:1.5mm; }
+.exec .lbl { color:#b02424; font-weight:bold; }
+.exec .attest { font-size:8pt; color:#55677d; line-height:1.6;
+                border-top:0.4pt solid #c9d6e5; padding-top:2mm; margin-top:2mm; }
+
+/* ---------------- 编号章节 ---------------- */
+.chapter-head { display:flex; align-items:center; gap:5mm; margin:7mm 0 4mm;
+                padding-bottom:2mm; border-bottom:1.6pt solid #12345a;
+                break-after:avoid; page-break-after:avoid; }
+.chapter-head .num { font-family:Arial,sans-serif; font-size:26pt; font-weight:bold;
+                     color:#c9d6e5; line-height:1; }
+.chapter-head h2 { font-size:14pt; font-weight:bold; color:#12345a; margin:0; }
+.chapter-head .en { font-size:7.6pt; color:#8b98a8; letter-spacing:0.5mm; margin-top:1mm; }
+h3 { font-size:10.8pt; color:#12345a; margin:5mm 0 2mm; padding-left:2.5mm;
+     border-left:2.4pt solid #b02424; break-after:avoid; page-break-after:avoid; }
+ol { margin:1.5mm 0 3mm; padding-left:7mm; }
+li { margin-bottom:2mm; }
+table { width:100%; border-collapse:collapse; font-size:8.9pt; margin:2mm 0 0.5mm;
+        break-inside:avoid; page-break-inside:avoid; }
+table caption { caption-side:top; text-align:left; font-size:9.2pt; font-weight:bold;
+                color:#12345a; margin-bottom:1.5mm; }
+thead th { background:#12345a; color:#fff; font-weight:bold; text-align:left;
+           padding:1.5mm 2.5mm; border:0.4pt solid #12345a; }
+tbody td { padding:1.3mm 2.5mm; border:0.4pt solid #d6dfe9; vertical-align:middle; }
+tbody tr:nth-child(even) td { background:#f4f7fb; }
+tbody tr:last-child td { border-bottom:1.2pt solid #12345a; }
+.tbl-note { font-size:8pt; color:#66788c; margin:0.5mm 0 2.5mm; }
+figure { margin:3mm 0; text-align:center; break-inside:avoid; page-break-inside:avoid; }
+figure img { max-width:100%; height:auto; display:block; margin:0 auto;
+             border:0.4pt solid #e1e7ef; padding:1.2mm; background:#fff; }
+figcaption { font-size:8.4pt; color:#44546a; line-height:1.7; margin-top:2mm; text-align:left; }
+.formula { border-left:2.8pt solid #12345a; background:#f4f7fb; padding:3mm 4mm;
+           margin:3mm 0 4mm; break-inside:avoid; page-break-inside:avoid; }
+.formula .lbl { font-size:8pt; font-weight:bold; color:#12345a; letter-spacing:0.5mm; }
+.formula .body { font-family:"Times New Roman",serif; font-size:11.5pt; margin-top:1.5mm; }
+.appendix-item { margin:3mm 0; font-size:9.2pt; line-height:1.8; }
+.appendix-item b { color:#12345a; }
+.docs { font-size:9pt; color:#33445c; }
+.docs li { margin-bottom:1.5mm; }
+.disclaimer { font-size:8.4pt; color:#55677d; margin-top:6mm; padding-top:3mm;
+              border-top:0.8pt solid #12345a; line-height:1.8; }
+</style></head><body>
+<section class="cover">
+<div class="cover-band"></div>
+<div class="cover-head"><img src="LOGO1.png" alt="公司标识"><div class="cover-code">证券代码：<b>002520</b><br>公司简称：<b>摸鱼科技</b><br>披露日期：2026 年 11 月 9 日</div></div>
+<div class="cover-main">
+<div class="cover-company">摸鱼科技股份有限公司</div>
+<div class="cover-en">MOYU TECHNOLOGY CO., LTD.</div>
+<div class="cover-rule"></div>
+<h1 class="cover-title">2026 年第 45 周工作报告</h1>
+<div class="cover-week">2026 年第 45 周</div>
+<div class="cover-kind">按上市公司年度报告体例编制 · 文体性戏仿</div>
+<div class="cover-subtitle">开了六个会，没一个需要我：会议热力学、决策真空与摸鱼周报自指悖论的经营分析及内控改进建议</div>
+<div class="cover-period">报告期：2026 年 11 月 2 日 至 2026 年 11 月 8 日</div>
+</div>
+<div class="kpi-strip"><div class="kpi-card"><div class="l">会议时长</div><div class="v">7.5 h</div><div class="c">+11.9%</div></div><div class="kpi-card"><div class="l">有效产出率</div><div class="v">22.3%</div><div class="c">-4.1 pp</div></div><div class="kpi-card"><div class="l">摸鱼熵</div><div class="v">1.444</div><div class="c">上限的 89.7%</div></div><div class="kpi-card"><div class="l">承诺兑现率</div><div class="v">41.3%</div><div class="c">协议后 85.2%</div></div></div>
+<div class="notice"><span class="t">重要提示</span>本公司董事会及全体填报人保证本报告所载内容不存在虚假记载、误导性陈述或重大遗漏，并对其内容的真实性、准确性和完整性承担个别及连带责任。<strong>本报告全部指标均为示意性测算，未经审计，不构成任何业绩承诺或经营预测</strong>，所涉会议、工位、饮水机及进度条均为普遍职场情境的戏仿，不指代任何真实企业、产品或个人。本报告不构成管理、法律或理财建议，请勿据此安排下周一早会。</div>
+<div class="cover-foot"><div>编制单位：协同赋能事业部 / 数字效能部<br>编制人：摸小鱼、明天一定做　联络：moyu@example.com<br>办公地址：中国 · 摸鱼科技园 B-14 工位<br>版本：v0.9（第 7 次修订，改动内容为把「推进中」改成「持续推进中」）　密级：内部公开（其实没人看）<br>审批链：自提 → 自审 → 自动抄送自己　资助：员工创新预算（项目编号：5201314）</div><img src="LOGO2.png" alt="信息披露专用章"></div>
+</section>
+<section class="front">
+<div class="fm-title">目录</div><div class="fm-sub">CONTENTS</div>
+<div class="toc-row"><span class="n">重要提示</span><span class="t">重要提示、目录和释义</span><span class="d"></span><span class="e">封面</span></div><div class="toc-row"><span class="n">摘要</span><span class="t">管理层摘要</span><span class="d"></span><span class="e">前置页</span></div><div class="toc-row"><span class="n">第 01 节</span><span class="t">公司基本情况与报告期概览</span><span class="d"></span><span class="e">SECTION 1 · COMPANY PROFILE</span></div><div class="toc-row"><span class="n">第 02 节</span><span class="t">主要指标与统计口径</span><span class="d"></span><span class="e">SECTION 2 · KEY METRICS</span></div><div class="toc-row"><span class="n">第 03 节</span><span class="t">管理层讨论与分析</span><span class="d"></span><span class="e">SECTION 3 · MANAGEMENT DISCUSSION &amp; ANALYSIS</span></div><div class="toc-row"><span class="n">第 04 节</span><span class="t">风险因素与内部控制</span><span class="d"></span><span class="e">SECTION 4 · RISK FACTORS &amp; INTERNAL CONTROL</span></div><div class="toc-row"><span class="n">第 05 节</span><span class="t">重大事项：摸鱼周报质押协议</span><span class="d"></span><span class="e">SECTION 5 · MATERIAL EVENTS</span></div><div class="toc-row"><span class="n">第 06 节</span><span class="t">下周经营计划与董事会结论</span><span class="d"></span><span class="e">SECTION 6 · OUTLOOK &amp; CONCLUSIONS</span></div><div class="toc-row"><span class="n">备查</span><span class="t">备查文件目录与附录</span><span class="d"></span><span class="e">APPENDIX</span></div>
+<div class="fm-title" style="margin-top:3mm">释义</div>
+<div class="fm-sub">DEFINITIONS　本报告中，除非文义另有所指，下列词语具有如下含义</div>
+<table class="glossary"><thead><tr><th>词语</th><th>含义</th></tr></thead><tbody><tr><td>公司 / 本公司</td><td>指摸鱼科技股份有限公司及其所辖 B-14 工位，不含任何真实法人实体。</td></tr><tr><td>报告期</td><td>2026-11-02 ~ 2026-11-08，共 5 个工作日，名义工时 40 h。</td></tr><tr><td>摸鱼周报自指悖论</td><td>把「撰写本报告」计为交付物时，账面产出被系统性抬高的现象。</td></tr><tr><td>决策真空</td><td>会议数量与需要本填报人做出的决策数量在统计上完全解耦的状态。</td></tr><tr><td>摸鱼熵</td><td>注意力在会议 / 交付 / 接水 / 刷手机 / 写摸鱼周报五类活动上的分散度。</td></tr><tr><td>末端通胀</td><td>进度由 90% 推进至 99% 所占用的时间比例，模型测算为 50.0%。</td></tr><tr><td>WDP</td><td>摸鱼周报质押协议（Weekly Deposit Protocol），本报告提出的带牙齿的内控机制。</td></tr><tr><td>示意性测算</td><td>由测算模型生成、未经审计、不代表真实经营数据的数值，全文均已标注。</td></tr></tbody></table>
+<div class="exec"><div class="h">管理层摘要</div><span class="lbl">结论：</span>报告期内未发生任何需要写进工作报告的事项，但本报告按时完成，构成唯一可验证的交付物，该现象被正式命名为<strong>摸鱼周报自指悖论</strong>。<span class="lbl">产出：</span>共清点交付物 4 项，其中 3 项为会议纪要，1 项为本报告本身；经口径校准，有效产出率 E = 22.3%，较上周 26.4% 下降 -4.1 个百分点（<strong>示意性测算，未经审计</strong>）。<span class="lbl">风险：</span>跨部门依赖项 1 项升级为 P0，症结为对方已读不回；摸鱼熵 H = 1.444，已达理论上限的 89.7%，模型判定报告期内处于<em>忙且空转</em>稳态。<span class="lbl">下周：</span>提交 3 条带责任人、截止日期与验收口径的承诺项，并接入<strong>摸鱼周报质押协议</strong> WDP：每条计划提交即质押 5 元，逾期未兑现则罚没并强制转存 20 年定期，未兑现清单自动抄送全组页脚。同一测算模型下，承诺兑现率由 41.3% 回升至 85.2%。<div class="attest">本报表由协同赋能事业部编制，经自审后自动抄送本人；全部填报过程均在「硬撑着认真上班」的前提下完成，全程瞪大双眼，脑袋放空，未出现任何形式的精神离席。编制人对本报告统计口径拥有最终解释权，因为口径也是编制人自己定的。</div></div>
+</section>
+<section class="chapter" style="page-break-before:always"><div class="chapter-head"><div class="num">01</div><div><h2>第 01 节　公司基本情况与报告期概览</h2><div class="en">SECTION 1 · COMPANY PROFILE</div></div></div><p>报告期内，本公司（指摸鱼科技股份有限公司所辖 B-14 工位，下同）主营业务未发生重大变化，仍以会议出席、进度条观测、饮水机水位目视巡检及摸鱼周报编制为主。截至报告期末，所辖工位 1 个、在岗人员 1 名、饮水机 1 台，均未发生增减变动。本报告全部数值由第七节测算模型生成，属<strong>示意性测算，未经审计、非真实经营数据</strong>，所有小数点的存在仅为维护披露文件的庄重感。</p>
+<p>报告期内共清点交付物 4 项，逐条附交付物形态与验收口径。为便于阅读，所有条目均已按经营成果格式规范化，对象本身是否构成经营成果不在本次口径校准范围内。</p>
+<ol><li><strong>六场会议全勤出席</strong>：累计 7.5 h，形成会议纪要 3 份，验收口径为「纪要已存在」，不校验是否有人打开。</li><li><strong>完成饮水机水位战略性目视巡检 14 次</strong>：单次平均耗时 20.6 min，形成《B-14 接水动线观察笔记》（未成文），验收口径为「人确实站起来过」。</li><li><strong>需求第 3 次变更完成同步</strong>：同步对象为本人，同步方式为把群消息再读一遍，验收口径为「已读」。</li><li><strong>本报告按时披露</strong>：唯一具备时间戳、责任人、审批链与免责声明的交付物，验收口径为「你正在读它」。</li></ol>
+<p>值得说明的是，第 4 项与前 3 项在统计口径上存在轻微的自指关系：前三项之所以被认定为交付物，依据正是它们出现在第 4 项里。说到底，会开完了，事没动，但纪要确实有了。</p></section>
+<section class="chapter"><div class="chapter-head"><div class="num">02</div><div><h2>第 02 节　主要指标与统计口径</h2><div class="en">SECTION 2 · KEY METRICS</div></div></div><p>本报告期共纳入 6 项主要经营指标，全部数值由第三节口径 (1)--(3) 所述测算模型生成，未经审计，不构成业绩承诺。表 1 给出本期值、环比、统计口径与责任人；图 1 给出逐日工时去向与有效产出率变动曲线。</p>
+<p>会议密度指数录得 7.5 h，环比 +11.9%，其中需要本填报人做出决定的会议为 0 场。有效产出率按口径 (1) 降至 22.3%；若依惯例把「撰写本报告」计为一项交付物，账面产出率将上升至 26.1%。该差额即为摸鱼周报自指悖论的可测量部分：<strong>报告越厚，产出越虚</strong>。</p>
+<table><colgroup><col style="width:32%"><col style="width:16%"><col style="width:20%"><col style="width:32%"></colgroup><caption>表 1　报告期主要经营指标（示意性测算，未经审计）</caption><thead><tr><th>指标</th><th>本期值</th><th>环比</th><th>统计口径 / 责任人</th></tr></thead><tbody><tr><td>会议密度指数</td><td>7.5 h</td><td>+11.9%</td><td>日历口径 / 本人</td></tr><tr><td>有效产出率 E</td><td>22.3%</td><td>-4.1 pp</td><td>口径 (1) / 本人</td></tr><tr><td>摸鱼熵 H</td><td>1.444</td><td>+89.7% 上限</td><td>口径 (2) / 本人</td></tr><tr><td>本周接水/走动</td><td>4.8 h</td><td>持平</td><td>工位凝视法 / 本人</td></tr><tr><td>账面产出（含摸鱼周报）</td><td>26.1%</td><td>虚高</td><td>自指项 / 本人</td></tr><tr><td>承诺兑现率</td><td>41.3%</td><td>无质押</td><td>口径 (3) / 本人</td></tr></tbody></table><div class="tbl-note">注：全部数值由同一测算模型生成，非真实经营数据。加粗项为本期最值得被上级看见、也最不该被上级看见的一项。</div>
+<figure><img src="fig1.png" alt="fig1" style="width:82%"><figcaption>图 1. (a) 逐日工时去向；(b) 有效产出率随会议时长变动，及把编制本报告计为交付物后的账面虚高。示意性测算曲线，未经审计。</figcaption></figure></section>
+<section class="chapter"><div class="chapter-head"><div class="num">03</div><div><h2>第 03 节　管理层讨论与分析</h2><div class="en">SECTION 3 · MANAGEMENT DISCUSSION &amp; ANALYSIS</div></div></div><p>管理层（即本人）就报告期经营情况讨论如下。本节深挖上述现象的症结，给出可计算口径与内控改进方向。所有口径仅用于产生示意性数值，不代表任何真实组织的行为规律，也不构成管理建议。</p>
+<h3>3.1 会议热力学与决策真空</h3>
+<p>设报告期会议总时长为 m，注意力在 k 类活动上的分布为 p<sub>i</sub>，定义有效产出率如口径 (1)。第一项为会议对产出的指数侵蚀，第二项为注意力分散带来的折减。</p>
+<div class="formula"><div class="lbl">计算口径 (1)</div><div class="body">E(m) = E<sub>0</sub> · e<sup>−λm</sup> − κH, &nbsp;&nbsp; H = −Σ<sub>i=1</sub><sup>k</sup> p<sub>i</sub> ln p<sub>i</sub></div></div>
+<p>其中 E<sub>0</sub> = 0.62 为名义产出率，λ = 0.062 为会议侵蚀系数，κ = 0.115 为摸鱼熵折减系数，H 为口径 (2) 定义的摸鱼熵。代入本期 m = 7.5 h 得 E = 22.3%。<strong>需要本填报人做出决定的会议为 0 场</strong>，故本报告期观测到的是决策真空：会议数量与决策数量在统计上完全解耦。听君一席话，胜读一席话。</p>
+<h3>3.2 摸鱼熵与摸鱼周报自指悖论</h3>
+<p>口径 2（摸鱼熵）：报告期注意力分布的混乱度 H = -Σp<sub>i</sub> ln p<sub>i</sub>。当注意力均匀分散时 H → ln k，模型判定该周期处于<em>忙且空转</em>稳态。本期 H = 1.444，为上限 ln 5 = 1.609 的 89.7%。</p>
+<div class="formula"><div class="lbl">计算口径 (2)</div><div class="body">Π<sub>w</sub> = W<sub>report</sub> / W<sub>total</sub>, &nbsp;&nbsp; E′ = E + Π<sub>w</sub></div></div>
+<p>口径 (2) 给出摸鱼周报自指悖论：编制报告所耗工时 W<sub>report</sub> 被计为交付物时，账面产出率 E′ 上升至 26.1%，而真实 E 仍为 22.3%。<strong>报告越厚，产出越虚</strong>；唯一被稳定交付的，是关于交付的报告。图 2 给出这一自强化闭环：写满「持续推进中」→ 下周照抄 → 承诺无成本 → 无人核验 → 再写满「持续推进中」。</p>
+<figure><img src="fig2.png" alt="fig2" style="width:66%"><figcaption>图 2. 「写满推进中」自强化闭环（示意性机制图）。图中兑现率由口径 (3) 测算模型给出，未经审计。</figcaption></figure>
+<h3>3.3 前期比较与同业披露对照</h3>
+<p>公司内部制度文件[1][2]普遍把摸鱼周报视为信息同步工具，隐含假设是「条目被写下」等价于「事项被推进」。本期对账显示，上期报告[3]中 5 条「持续推进中」有 4 条在本期原样照登，1 条仅将措辞由「推进中」升级为「持续推进中」。据此管理层认为：摸鱼周报的真正功能不是同步信息，而是<strong>为未发生的事提供一个体面的存放位置</strong>。</p>
+<p>另有同业实践[4]建议「设个提醒」以改善兑现率。模型对照显示该方案仅把兑现率由 41.3% 抬到 48.8%，原因是提醒本身可被划掉，不具备真实代价。对齐了颗粒度，没对齐进度。</p></section>
+<section class="chapter"><div class="chapter-head"><div class="num">04</div><div><h2>第 04 节　风险因素与内部控制</h2><div class="en">SECTION 4 · RISK FACTORS &amp; INTERNAL CONTROL</div></div></div><p>阻塞项按 P0 / P1 / P2 分级，每条带责任人、截止日期与升级路径（表 2）。本期最高等级 P0 并非技术风险，而是<strong>已读不回</strong>：对方具备回复能力、具备回复渠道、且已被系统确认读取，唯独不具备回复行为。该状态在口径 (3) 的测算模型里对应净效用 -0.35，兑现率仅 41.3%。</p>
+<p>升级路径统一为「下周三 18:00 未解除则抄送全组页脚」。需要指出，抄送全组页脚并不会使对方回复，但会使本报告显得已经采取了措施。这一区别在季度复盘时通常不被区分。</p>
+<table><colgroup><col style="width:22%"><col style="width:43%"><col style="width:35%"></colgroup><caption>表 2　风险矩阵、责任人与升级路径</caption><thead><tr><th>等级 / 责任人</th><th>风险描述</th><th>截止 / 升级路径</th></tr></thead><tbody><tr><td>P0 / 本人</td><td>对方已读不回，需求第 3 次漂移</td><td>下周三 18:00 / 抄送全组</td></tr><tr><td>P1 / 协同组</td><td>进度条停留 99% 已逾 3 日</td><td>下周五 12:00 / 拉通对齐</td></tr><tr><td>P2 / 本人</td><td>收藏 14 篇必读，实际阅读 0 篇</td><td>下周五 / 纳入质押</td></tr><tr><td>无</td><td>其余风险本报告期未识别</td><td>持续监控（不写「推进中」）</td></tr></tbody></table><div class="tbl-note">注：每条必须有责任人、截止日期与升级路径；「持续推进中」在本表中不被接受为状态。</div></section>
+<section class="chapter"><div class="chapter-head"><div class="num">05</div><div><h2>第 05 节　重大事项：摸鱼周报质押协议</h2><div class="en">SECTION 5 · MATERIAL EVENTS</div></div></div><p>诊断之后必须给出制度。管理层识别的真实症结是：<strong>承诺零成本、兑现零核验</strong>。据此郑重提出<strong>摸鱼周报质押协议</strong>（Weekly Deposit Protocol, WDP），其核心不是「加强计划管理」这类抽象原则，而是一个真会咬人的具体机制：提交一条下周计划，即同时质押 5 元。</p>
+<p>协议规程如下：(1) 提交承诺项时自动生成存证编号并划转押金；(2) 下周五 17:00 由系统按验收口径自动对账，验收通过则退还押金并累积闭环积分，每月可兑换 1 张「免写摸鱼周报券」；(3) 逾期未兑现者押金立即罚没，不设申诉通道，并强制转存一份 20 年定期存单——「你没做完的事，替你把钱锁进了时间的保险柜，20 年后连本带息还给那个更自律的你」；(4) 未兑现清单自动抄送全组摸鱼周报页脚。其内核是押金式承诺装置、损失厌恶与社会可见性三重真实杠杆[5]，外壳荒诞但每一步都从症结顺理成章推出。图 3 给出流程，表 3 给出示意性前后对比。</p>
+<figure><img src="fig3.png" alt="fig3" style="width:62%"><figcaption>图 3. WDP 质押协议流程。牙齿落在「罚没 + 20 年定期 + 全组可见」三处，而非「设个提醒」。机制为示意性设计，请勿据此修改真实薪酬制度。</figcaption></figure>
+<table><colgroup><col style="width:30%"><col style="width:24%"><col style="width:46%"></colgroup><caption>表 3　传统摸鱼周报与质押协议对比（示意性测算，未经审计）</caption><thead><tr><th>做法</th><th>承诺兑现率</th><th>未兑现代价</th></tr></thead><tbody><tr><td>传统摸鱼周报</td><td>41.3%</td><td>无（下周照抄）</td></tr><tr><td>设个提醒</td><td>48.8%</td><td>仍无（提醒可划掉）</td></tr><tr><td><strong>质押协议 WDP</strong></td><td><strong>85.2%</strong></td><td>罚没 + 20 年定期 + 全组可见</td></tr></tbody></table><div class="tbl-note">注：全部数值由口径 (3) 同一测算模型生成，属示意性预期，非真实经营数据。加粗为目标列最优结果。</div>
+<p>口径 3（承诺兑现率）：设兑现净效用为 u，则 R(u) = 1/(1+e<sup>-u/θ</sup>)，θ = 1.0 为决策噪声温度。传统摸鱼周报 u = -0.35，设提醒 u = -0.05，WDP 下押金与社会可见性把 u 抬高至 1.75，兑现率相应由 41.3% 升至 85.2%。</p>
+<h3>5.1 局限与口径说明</h3>
+<p>本协议的局限有三：其一，模型假设人对 5 元罚金保持理性敏感，而本填报人对 5 元的敏感度显然低于对「全组可见」的敏感度；其二，20 年定期存单的到期日超出本报告任何在途事项的预计完成时间；其三，协议由填报人自行设计、自行审批、自行抄送，审批链的三个节点经查为同一人。上述不足不影响本期结论，因为本期结论只有一句：摸鱼周报按时交了。</p></section>
+<section class="chapter"><div class="chapter-head"><div class="num">06</div><div><h2>第 06 节　下周经营计划与董事会结论</h2><div class="en">SECTION 6 · OUTLOOK &amp; CONCLUSIONS</div></div></div><p>下周共提交 3 条承诺项，逐条绑定验收口径，并自本期起接入第五节的摸鱼周报质押协议 WDP。承诺项一经提交即生成存证编号，不接受「下周再说」作为延期理由——「下周再说」已在第三节被登记为在途事项。</p>
+<ol><li><strong>P-01 进度条 100%</strong>：责任人 本人，截止 下周五 17:00，验收口径为截图含 100% 且不含「正在保存」，质押 5 元。</li><li><strong>P-02 14 篇必读至少读完 1 篇</strong>：责任人 本人，截止 下周五 17:00，验收口径为提交 200 字读后感（不接受「已收藏」），质押 5 元。</li><li><strong>P-03 对齐颗粒度出具结论 1 条</strong>：责任人 协同组，截止 下周三 18:00，验收口径为对方回复含明确动词，质押 5 元。</li></ol>
+<p>三条承诺合计质押 15 元。模型测算在协议约束下整体兑现率由 41.3% 升至 85.2%（<strong>示意性预期，未经审计</strong>）。三条承诺的措辞已由 v0.8 的「持续推进」统一修订为可验收动词，本次修订是本报告期实际发生的最大范围变更。</p>
+<p>本期主要结论如下：<strong>第一</strong>，会议密度上行而决策数量恒为零，有效产出率降至 22.3%，摸鱼熵达上限的 89.7%；<strong>第二</strong>，把编制摸鱼周报计为交付会系统性抬高账面产出，该自指悖论可计量、可核对、且每周准时发生；<strong>第三</strong>，承诺零成本是在途事项长期停留 99% 的根本原因，为其装上押金、罚没与全组可见三口牙齿后，示意性兑现率升至 85.2%。</p>
+<p>综合而言，本期未发生任何需要写进工作报告的事项，但报告本身按时完成，并经 7 次修订达到 v0.9。这既是对本期的忠实描述，也是本报告存在的全部理由。<em>身体在工位，灵魂在摸鱼周报里。</em></p>
+<p><strong>审批签字栏（自设立起永久留白）</strong>：按惯例，本栏自本文件设立以来保持空白，以可视化方式收束全文论点：没有任何一份摸鱼周报真正被审批过。表 4 给出四个节点的空白模板，供后续报告期继续留白。</p>
+<table><colgroup><col style="width:34%"><col style="width:40%"><col style="width:26%"></colgroup><caption>表 4　审批签字栏空白模板（自设立起永久留白）</caption><thead><tr><th>审批节点</th><th>签字</th><th>日期</th></tr></thead><tbody><tr><td>编制人 / 自提</td><td>____________</td><td>__________</td></tr><tr><td>自审 / 复核</td><td>____________</td><td>__________</td></tr><tr><td>自动抄送 / 归档</td><td>____________</td><td>__________</td></tr><tr><td>上级意见</td><td>（本栏保持空白）</td><td>—</td></tr></tbody></table><div class="tbl-note">注：表内所有签字位按惯例留白。空白本身是本报告最稳定的交付物。</div></section>
+<section class="chapter"><div class="chapter-head"><div class="num">07</div><div><h2>第 7 节　备查文件目录与附录</h2><div class="en">SECTION 7 · APPENDIX &amp; DOCUMENTS</div></div></div>
+<div class="appendix-item"><b>A. 编制口径与操作规程</b><br>A1 工位台账自查法：以填报人本周期工位台账为原始记录，覆盖范围 1 个工位，追溯链完整。A2 工位凝视法：记录「站起来接水却忘记要拿什么」的发生频次，本期 14 次。A3 聊天框证据链追踪法：在对方不回消息期间核对其公开动态，判断其是否具备回复能力；结论为具备。上述记录未按任何抽样规则选取，戏仿定位与示意性测算已在全文标明。</div>
+<div class="appendix-item"><b>B. 备查文件与工程附件</b><br>model.py（测算模型）、make_figs.py（图表生成）、content.py（本内容源）、build_weekly.py（年报体例渲染）随文提供，可在任意支持 XeLaTeX 或 Chrome 的环境重新生成本报告。</div>
+<div class="appendix-item"><b>C. 致谢</b><br>感谢饮水机在全部 14 次目视巡检中保持水位稳定，感谢进度条在 99% 处长期驻留所提供的稳定观测条件，并感谢本人对本报告的自审未提出任何修改意见。</div>
+<h3>备查文件目录</h3><ol class="docs">
+<li>《摸鱼科技股份有限公司摸鱼周报管理办法（试行）》，内部制度文件，第 7 版，2026。</li>
+<li>摸小鱼，《关于持续推进中的口径说明》，内部制度文件，2026，第 1 版。</li>
+<li>《上期摸鱼周报》，编制人本人，内部归档，2026，共 4 页。本报告 80\% 的句式沿用自此。</li>
+<li>《信息部关于「信息量不等于决策量」的备忘》，内部制度文件，2025，仅作术语来源说明，未用于任何真实测算。</li>
+<li>《员工手册》第 4.2 条「关于不得把写摸鱼周报算作加班的规定」，内部制度文件，2025。（本报告未违反该条，因为本报告未申请加班。）</li>
+</ol>
+<div class="disclaimer">免责声明：本报告为文体性戏仿，按上市公司年度报告体例编排，全部指标、模型与结论均为示意性测算，未经审计，不代表任何真实个人、团队或企业的工作表现与经营业绩，不指代任何真实企业、产品或服务，不构成业绩承诺、管理、法律或理财建议；请勿据此安排下周一早会，亦请勿真的去银行开立 20 年定期存单。</div>
+</section></body></html>

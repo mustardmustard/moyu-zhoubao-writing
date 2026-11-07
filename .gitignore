@@ -1,0 +1,18 @@
+# LaTeX build artifacts
+.build_*/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+# Python
+__pycache__/
+*.pyc
+# OS
+.DS_Store
+# WorkBuddy 项目内部数据（不推送到公开仓库）
+.workbuddy/
+# 逐页自检产生的预览图
+output/**/_preview/
+# 改造前的历史归档：本地保留，不推送
+/archive/

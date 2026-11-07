@@ -1,0 +1,286 @@
+% 摸鱼科技 · 摸鱼周报（上市公司年报体例）模板
+% A4 单栏，XeLaTeX 编译；页眉页脚为披露文件样式，不是双栏内刊样式。
+\documentclass[11pt,a4paper]{article}
+\usepackage[usenames]{color}
+\usepackage{xcolor}
+\definecolor{navy}{HTML}{12345A}
+\definecolor{reportred}{HTML}{B02424}
+\usepackage{epsfig}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{url}
+\usepackage{geometry}
+\geometry{verbose,a4paper,tmargin=20mm,bmargin=18mm,lmargin=18mm,rmargin=18mm}
+
+% 中文支持（需使用 XeLaTeX 编译）
+\usepackage{xeCJK}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}}{\setCJKmainfont{SimSun}}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{Microsoft YaHei}}
+\IfFontExistsTF{Noto Sans Mono CJK SC}{\setCJKmonofont{Noto Sans Mono CJK SC}}{\setCJKmonofont{SimHei}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\textcolor{navy}{摸鱼科技股份有限公司}}
+\rhead{\small 证券代码：002520}
+\lfoot{\scriptsize 示意性测算，未经审计 · 文体性戏仿}
+\rfoot{\small 第 \thepage 页}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\renewcommand{\thesection}{第\,\arabic{section}\,节}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\includegraphics[width=0.42\textwidth]{LOGO1.png}\par\vspace{3mm}
+{\Large\bfseries\textcolor{navy}{摸鱼科技股份有限公司}}\par
+{\small MOYU TECHNOLOGY CO., LTD.}\par
+\vspace{1mm}\hrule height 1.2pt\vspace{8mm}
+{\Huge\bfseries\textcolor{navy}{2026 年第 45 周工作报告}}\par
+\vspace{3mm}{\large\textcolor{reportred}{2026 年第 45 周}}\par
+\vspace{6mm}{\small 按上市公司年度报告体例编制 · 文体性戏仿}\par
+\vspace{8mm}{\normalsize 开了六个会，没一个需要我：会议热力学、决策真空与摸鱼周报自指悖论的经营分析及内控改进建议}\par
+\vspace{8mm}{\normalsize 报告期：2026 年 11 月 2 日 至 2026 年 11 月 8 日}\par
+\vspace{10mm}
+\begin{minipage}[t]{0.23\textwidth}\centering {\footnotesize 会议时长}\par {\Large\bfseries\textcolor{navy}{7.5 h}}\par {\footnotesize\textcolor{reportred}{+11.9\%}}\end{minipage}\hfill
+\begin{minipage}[t]{0.23\textwidth}\centering {\footnotesize 有效产出率}\par {\Large\bfseries\textcolor{navy}{22.3\%}}\par {\footnotesize\textcolor{reportred}{-4.1 pp}}\end{minipage}\hfill
+\begin{minipage}[t]{0.23\textwidth}\centering {\footnotesize 摸鱼熵}\par {\Large\bfseries\textcolor{navy}{1.444}}\par {\footnotesize\textcolor{reportred}{上限的 89.7\%}}\end{minipage}\hfill
+\begin{minipage}[t]{0.23\textwidth}\centering {\footnotesize 承诺兑现率}\par {\Large\bfseries\textcolor{navy}{41.3\%}}\par {\footnotesize\textcolor{reportred}{协议后 85.2\%}}\end{minipage}\hfill
+\vspace{10mm}
+\begin{minipage}{0.88\textwidth}\small 
+\textcolor{reportred}{\bfseries 重要提示}\quad 本公司董事会及全体填报人保证本报告所载内容不存在虚假记载、误导性陈述或重大遗漏，并对其内容的真实性、准确性和完整性承担个别及连带责任。\textbf{本报告全部指标均为示意性测算，未经审计，不构成任何业绩承诺或经营预测}，所涉会议、工位、饮水机及进度条均为普遍职场情境的戏仿，不指代任何真实企业、产品或个人。本报告不构成管理、法律或理财建议，请勿据此安排下周一早会。
+\end{minipage}\par\vfill
+\begin{minipage}{0.88\textwidth}\footnotesize\raggedright
+编制单位：协同赋能事业部 / 数字效能部\quad 编制人：摸小鱼、明天一定做\\
+办公地址：中国 · 摸鱼科技园 B-14 工位\quad 披露日期：2026 年 11 月 9 日\\
+证券代码：002520\quad 公司简称：摸鱼科技\quad 版本：v0.9（第 7 次修订，改动内容为把「推进中」改成「持续推进中」）
+\end{minipage}
+\end{titlepage}
+\newpage
+\tableofcontents
+\newpage
+
+\section{公司基本情况与报告期概览}
+报告期内，本公司（指摸鱼科技股份有限公司所辖 B-14 工位，下同）主营业务未发生重大变化，仍以会议出席、进度条观测、饮水机水位目视巡检及摸鱼周报编制为主。截至报告期末，所辖工位 1 个、在岗人员 1 名、饮水机 1 台，均未发生增减变动。本报告全部数值由第七节测算模型生成，属\textbf{示意性测算，未经审计、非真实经营数据}，所有小数点的存在仅为维护披露文件的庄重感。
+
+报告期内共清点交付物 4 项，逐条附交付物形态与验收口径。为便于阅读，所有条目均已按经营成果格式规范化，对象本身是否构成经营成果不在本次口径校准范围内。
+
+\begin{enumerate}
+\item \textbf{六场会议全勤出席}：累计 7.5 h，形成会议纪要 3 份，验收口径为「纪要已存在」，不校验是否有人打开。
+\item \textbf{完成饮水机水位战略性目视巡检 14 次}：单次平均耗时 20.6 min，形成《B-14 接水动线观察笔记》（未成文），验收口径为「人确实站起来过」。
+\item \textbf{需求第 3 次变更完成同步}：同步对象为本人，同步方式为把群消息再读一遍，验收口径为「已读」。
+\item \textbf{本报告按时披露}：唯一具备时间戳、责任人、审批链与免责声明的交付物，验收口径为「你正在读它」。
+\end{enumerate}
+
+值得说明的是，第 4 项与前 3 项在统计口径上存在轻微的自指关系：前三项之所以被认定为交付物，依据正是它们出现在第 4 项里。说到底，会开完了，事没动，但纪要确实有了。
+
+\section{主要指标与统计口径}
+本报告期共纳入 6 项主要经营指标，全部数值由第三节口径 (1)--(3) 所述测算模型生成，未经审计，不构成业绩承诺。表 1 给出本期值、环比、统计口径与责任人；图 1 给出逐日工时去向与有效产出率变动曲线。
+
+会议密度指数录得 7.5 h，环比 +11.9\%，其中需要本填报人做出决定的会议为 0 场。有效产出率按口径 (1) 降至 22.3\%；若依惯例把「撰写本报告」计为一项交付物，账面产出率将上升至 26.1\%。该差额即为摸鱼周报自指悖论的可测量部分：\textbf{报告越厚，产出越虚}。
+
+\begin{table}[ht]
+\centering
+\small
+\caption*{表 1　报告期主要经营指标（示意性测算，未经审计）}
+\begin{tabular}{ m{0.28\textwidth} m{0.15\textwidth} m{0.20\textwidth} m{0.33\textwidth} }
+\hline\hline
+\textbf{指标} & \textbf{本期值} & \textbf{环比} & \textbf{统计口径 / 责任人} \\
+\hline
+
+会议密度指数 & 7.5 h & +11.9\% & 日历口径 / 本人 \\
+
+有效产出率 E & 22.3\% & -4.1 pp & 口径 (1) / 本人 \\
+
+摸鱼熵 H & 1.444 & +89.7\% 上限 & 口径 (2) / 本人 \\
+
+本周接水/走动 & 4.8 h & 持平 & 工位凝视法 / 本人 \\
+
+账面产出（含摸鱼周报） & 26.1\% & 虚高 & 自指项 / 本人 \\
+
+承诺兑现率 & 41.3\% & 无质押 & 口径 (3) / 本人 \\
+
+\hline\hline
+\end{tabular}
+\par\vspace{1mm}\footnotesize 全部数值由同一测算模型生成，非真实经营数据。加粗项为本期最值得被上级看见、也最不该被上级看见的一项。
+\end{table}
+\normalsize
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.82\textwidth]{./fig1.png}
+\caption{(a) 逐日工时去向；(b) 有效产出率随会议时长变动，及把编制本报告计为交付物后的账面虚高。示意性测算曲线，未经审计。}
+\label{fig:1}
+\end{figure}
+
+\section{管理层讨论与分析}
+管理层（即本人）就报告期经营情况讨论如下。本节深挖上述现象的症结，给出可计算口径与内控改进方向。所有口径仅用于产生示意性数值，不代表任何真实组织的行为规律，也不构成管理建议。
+
+\subsection{3.1 会议热力学与决策真空}
+设报告期会议总时长为 m，注意力在 k 类活动上的分布为 p\textsubscript{i}，定义有效产出率如口径 (1)。第一项为会议对产出的指数侵蚀，第二项为注意力分散带来的折减。
+
+\begin{equation}
+E(m) = E_{0}\,e^{-\lambda m} - \kappa H,\qquad H = -\sum_{i=1}^{k} p_{i}\ln p_{i}
+\label{eq:output}
+\end{equation}
+
+其中 E\textsubscript{0} = 0.62 为名义产出率，λ = 0.062 为会议侵蚀系数，κ = 0.115 为摸鱼熵折减系数，H 为口径 (2) 定义的摸鱼熵。代入本期 m = 7.5 h 得 E = 22.3\%。\textbf{需要本填报人做出决定的会议为 0 场}，故本报告期观测到的是决策真空：会议数量与决策数量在统计上完全解耦。听君一席话，胜读一席话。
+
+\subsection{3.2 摸鱼熵与摸鱼周报自指悖论}
+口径 2（摸鱼熵）：报告期注意力分布的混乱度 H = -Σp\textsubscript{i} ln p\textsubscript{i}。当注意力均匀分散时 H → ln k，模型判定该周期处于\textit{忙且空转}稳态。本期 H = 1.444，为上限 ln 5 = 1.609 的 89.7\%。
+
+\begin{equation}
+\Pi_{w} = \frac{W_{report}}{W_{total}},\qquad E^{\prime} = E + \Pi_{w}
+\label{eq:entropy}
+\end{equation}
+
+口径 (2) 给出摸鱼周报自指悖论：编制报告所耗工时 W\textsubscript{report} 被计为交付物时，账面产出率 E′ 上升至 26.1\%，而真实 E 仍为 22.3\%。\textbf{报告越厚，产出越虚}；唯一被稳定交付的，是关于交付的报告。图 2 给出这一自强化闭环：写满「持续推进中」→ 下周照抄 → 承诺无成本 → 无人核验 → 再写满「持续推进中」。
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.66\textwidth]{./fig2.png}
+\caption{「写满推进中」自强化闭环（示意性机制图）。图中兑现率由口径 (3) 测算模型给出，未经审计。}
+\label{fig:2}
+\end{figure}
+
+\subsection{3.3 前期比较与同业披露对照}
+公司内部制度文件[1][2]普遍把摸鱼周报视为信息同步工具，隐含假设是「条目被写下」等价于「事项被推进」。本期对账显示，上期报告[3]中 5 条「持续推进中」有 4 条在本期原样照登，1 条仅将措辞由「推进中」升级为「持续推进中」。据此管理层认为：摸鱼周报的真正功能不是同步信息，而是\textbf{为未发生的事提供一个体面的存放位置}。
+
+另有同业实践[4]建议「设个提醒」以改善兑现率。模型对照显示该方案仅把兑现率由 41.3\% 抬到 48.8\%，原因是提醒本身可被划掉，不具备真实代价。对齐了颗粒度，没对齐进度。
+
+\section{风险因素与内部控制}
+阻塞项按 P0 / P1 / P2 分级，每条带责任人、截止日期与升级路径（表 2）。本期最高等级 P0 并非技术风险，而是\textbf{已读不回}：对方具备回复能力、具备回复渠道、且已被系统确认读取，唯独不具备回复行为。该状态在口径 (3) 的测算模型里对应净效用 -0.35，兑现率仅 41.3\%。
+
+升级路径统一为「下周三 18:00 未解除则抄送全组页脚」。需要指出，抄送全组页脚并不会使对方回复，但会使本报告显得已经采取了措施。这一区别在季度复盘时通常不被区分。
+
+\begin{table}[ht]
+\centering
+\small
+\caption*{表 2　风险矩阵、责任人与升级路径}
+\begin{tabular}{ m{0.22\textwidth} m{0.42\textwidth} m{0.32\textwidth} }
+\hline\hline
+\textbf{等级 / 责任人} & \textbf{风险描述} & \textbf{截止 / 升级路径} \\
+\hline
+
+P0 / 本人 & 对方已读不回，需求第 3 次漂移 & 下周三 18:00 / 抄送全组 \\
+
+P1 / 协同组 & 进度条停留 99\% 已逾 3 日 & 下周五 12:00 / 拉通对齐 \\
+
+P2 / 本人 & 收藏 14 篇必读，实际阅读 0 篇 & 下周五 / 纳入质押 \\
+
+无 & 其余风险本报告期未识别 & 持续监控（不写「推进中」） \\
+
+\hline\hline
+\end{tabular}
+\par\vspace{1mm}\footnotesize 每条必须有责任人、截止日期与升级路径；「持续推进中」在本表中不被接受为状态。
+\end{table}
+\normalsize
+
+\section{重大事项：摸鱼周报质押协议}
+诊断之后必须给出制度。管理层识别的真实症结是：\textbf{承诺零成本、兑现零核验}。据此郑重提出\textbf{摸鱼周报质押协议}（Weekly Deposit Protocol, WDP），其核心不是「加强计划管理」这类抽象原则，而是一个真会咬人的具体机制：提交一条下周计划，即同时质押 5 元。
+
+协议规程如下：(1) 提交承诺项时自动生成存证编号并划转押金；(2) 下周五 17:00 由系统按验收口径自动对账，验收通过则退还押金并累积闭环积分，每月可兑换 1 张「免写摸鱼周报券」；(3) 逾期未兑现者押金立即罚没，不设申诉通道，并强制转存一份 20 年定期存单——「你没做完的事，替你把钱锁进了时间的保险柜，20 年后连本带息还给那个更自律的你」；(4) 未兑现清单自动抄送全组摸鱼周报页脚。其内核是押金式承诺装置、损失厌恶与社会可见性三重真实杠杆[5]，外壳荒诞但每一步都从症结顺理成章推出。图 3 给出流程，表 3 给出示意性前后对比。
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.62\textwidth]{./fig3.png}
+\caption{WDP 质押协议流程。牙齿落在「罚没 + 20 年定期 + 全组可见」三处，而非「设个提醒」。机制为示意性设计，请勿据此修改真实薪酬制度。}
+\label{fig:3}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\small
+\caption*{表 3　传统摸鱼周报与质押协议对比（示意性测算，未经审计）}
+\begin{tabular}{ m{0.28\textwidth} m{0.22\textwidth} m{0.46\textwidth} }
+\hline\hline
+\textbf{做法} & \textbf{承诺兑现率} & \textbf{未兑现代价} \\
+\hline
+
+传统摸鱼周报 & 41.3\% & 无（下周照抄） \\
+
+设个提醒 & 48.8\% & 仍无（提醒可划掉） \\
+
+\textbf{质押协议 WDP} & \textbf{85.2\%} & 罚没 + 20 年定期 + 全组可见 \\
+
+\hline\hline
+\end{tabular}
+\par\vspace{1mm}\footnotesize 全部数值由口径 (3) 同一测算模型生成，属示意性预期，非真实经营数据。加粗为目标列最优结果。
+\end{table}
+\normalsize
+
+口径 3（承诺兑现率）：设兑现净效用为 u，则 R(u) = 1/(1+e\textsuperscript{-u/θ})，θ = 1.0 为决策噪声温度。传统摸鱼周报 u = -0.35，设提醒 u = -0.05，WDP 下押金与社会可见性把 u 抬高至 1.75，兑现率相应由 41.3\% 升至 85.2\%。
+
+\subsection{5.1 局限与口径说明}
+本协议的局限有三：其一，模型假设人对 5 元罚金保持理性敏感，而本填报人对 5 元的敏感度显然低于对「全组可见」的敏感度；其二，20 年定期存单的到期日超出本报告任何在途事项的预计完成时间；其三，协议由填报人自行设计、自行审批、自行抄送，审批链的三个节点经查为同一人。上述不足不影响本期结论，因为本期结论只有一句：摸鱼周报按时交了。
+
+\section{下周经营计划与董事会结论}
+下周共提交 3 条承诺项，逐条绑定验收口径，并自本期起接入第五节的摸鱼周报质押协议 WDP。承诺项一经提交即生成存证编号，不接受「下周再说」作为延期理由——「下周再说」已在第三节被登记为在途事项。
+
+\begin{enumerate}
+\item \textbf{P-01 进度条 100\%}：责任人 本人，截止 下周五 17:00，验收口径为截图含 100\% 且不含「正在保存」，质押 5 元。
+\item \textbf{P-02 14 篇必读至少读完 1 篇}：责任人 本人，截止 下周五 17:00，验收口径为提交 200 字读后感（不接受「已收藏」），质押 5 元。
+\item \textbf{P-03 对齐颗粒度出具结论 1 条}：责任人 协同组，截止 下周三 18:00，验收口径为对方回复含明确动词，质押 5 元。
+\end{enumerate}
+
+三条承诺合计质押 15 元。模型测算在协议约束下整体兑现率由 41.3\% 升至 85.2\%（\textbf{示意性预期，未经审计}）。三条承诺的措辞已由 v0.8 的「持续推进」统一修订为可验收动词，本次修订是本报告期实际发生的最大范围变更。
+
+本期主要结论如下：\textbf{第一}，会议密度上行而决策数量恒为零，有效产出率降至 22.3\%，摸鱼熵达上限的 89.7\%；\textbf{第二}，把编制摸鱼周报计为交付会系统性抬高账面产出，该自指悖论可计量、可核对、且每周准时发生；\textbf{第三}，承诺零成本是在途事项长期停留 99\% 的根本原因，为其装上押金、罚没与全组可见三口牙齿后，示意性兑现率升至 85.2\%。
+
+综合而言，本期未发生任何需要写进工作报告的事项，但报告本身按时完成，并经 7 次修订达到 v0.9。这既是对本期的忠实描述，也是本报告存在的全部理由。\textit{身体在工位，灵魂在摸鱼周报里。}
+
+\textbf{审批签字栏（自设立起永久留白）}：按惯例，本栏自本文件设立以来保持空白，以可视化方式收束全文论点：没有任何一份摸鱼周报真正被审批过。表 4 给出四个节点的空白模板，供后续报告期继续留白。
+
+\begin{table}[ht]
+\centering
+\small
+\caption*{表 4　审批签字栏空白模板（自设立起永久留白）}
+\begin{tabular}{ m{0.32\textwidth} m{0.42\textwidth} m{0.22\textwidth} }
+\hline\hline
+\textbf{审批节点} & \textbf{签字} & \textbf{日期} \\
+\hline
+
+编制人 / 自提 & \_\_\_\_\_\_\_\_\_\_\_\_ & \_\_\_\_\_\_\_\_\_\_ \\
+
+自审 / 复核 & \_\_\_\_\_\_\_\_\_\_\_\_ & \_\_\_\_\_\_\_\_\_\_ \\
+
+自动抄送 / 归档 & \_\_\_\_\_\_\_\_\_\_\_\_ & \_\_\_\_\_\_\_\_\_\_ \\
+
+上级意见 & （本栏保持空白） & — \\
+
+\hline\hline
+\end{tabular}
+\par\vspace{1mm}\footnotesize 表内所有签字位按惯例留白。空白本身是本报告最稳定的交付物。
+\end{table}
+\normalsize
+
+\section*{备查文件目录与附录}
+\addcontentsline{toc}{section}{备查文件目录与附录}
+\noindent\textbf{A. 编制口径与操作规程}\par
+A1 工位台账自查法：以填报人本周期工位台账为原始记录，覆盖范围 1 个工位，追溯链完整。A2 工位凝视法：记录「站起来接水却忘记要拿什么」的发生频次，本期 14 次。A3 聊天框证据链追踪法：在对方不回消息期间核对其公开动态，判断其是否具备回复能力；结论为具备。上述记录未按任何抽样规则选取，戏仿定位与示意性测算已在全文标明。\par\vspace{2mm}
+
+\noindent\textbf{B. 备查文件与工程附件}\par
+model.py（测算模型）、make\_figs.py（图表生成）、content.py（本内容源）、build\_weekly.py（年报体例渲染）随文提供，可在任意支持 XeLaTeX 或 Chrome 的环境重新生成本报告。\par\vspace{2mm}
+
+\noindent\textbf{C. 致谢}\par
+感谢饮水机在全部 14 次目视巡检中保持水位稳定，感谢进度条在 99\% 处长期驻留所提供的稳定观测条件，并感谢本人对本报告的自审未提出任何修改意见。\par\vspace{2mm}
+
+\noindent\textbf{备查文件}\par
+\begin{enumerate}
+\item 《摸鱼科技股份有限公司摸鱼周报管理办法（试行）》，内部制度文件，第 7 版，2026。
+\item 摸小鱼，《关于持续推进中的口径说明》，内部制度文件，2026，第 1 版。
+\item 《上期摸鱼周报》，编制人本人，内部归档，2026，共 4 页。本报告 80\textbackslash{}\% 的句式沿用自此。
+\item 《信息部关于「信息量不等于决策量」的备忘》，内部制度文件，2025，仅作术语来源说明，未用于任何真实测算。
+\item 《员工手册》第 4.2 条「关于不得把写摸鱼周报算作加班的规定」，内部制度文件，2025。（本报告未违反该条，因为本报告未申请加班。）
+\end{enumerate}
+
+\noindent\textit{免责声明：本报告为文体性戏仿，按上市公司年度报告体例编排，全部指标、模型与结论均为示意性测算，未经审计，不代表任何真实个人、团队或企业的工作表现与经营业绩，不指代任何真实企业、产品或服务，不构成业绩承诺、管理、法律或理财建议；请勿据此安排下周一早会，亦请勿真的去银行开立 20 年定期存单。}
+
+\end{document}
